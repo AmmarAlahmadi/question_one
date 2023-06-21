@@ -1,0 +1,56 @@
+
+package employee;
+
+
+
+public class Employee {
+public static double CalSalary(double salary,String education, int experience,String emptype){
+   double nsalary;
+    double edsalary = salary +(salary*0.05*experience);
+    double bsalary;
+      if(education == "Bachelore" && emptype =="Full time"){
+            
+        bsalary = edsalary + 500;
+        nsalary = bsalary * 1.03;
+        return nsalary;
+    }
+    else if (education == "Diploma" && emptype =="Full time"){
+        bsalary = edsalary + 250;
+        nsalary = bsalary * 1.03;
+        return nsalary;
+    }
+    else if (education == "Bachelore" && emptype =="Part time"){
+        bsalary = edsalary + 500;
+        nsalary = bsalary * 1.015;
+        return nsalary;
+    }else{
+        bsalary = edsalary + 250;
+        nsalary = bsalary * 1.015;
+        return nsalary;
+    }
+    
+            
+    
+}
+    
+    public static void main(String[] args) {
+        // Full time employee
+      String ftemp = "Full time";
+    String ftname = "Ammar";
+    String ftposition = "System Enginner";
+    double ftsalary = 6000;
+    int ftexperience = 1;
+    String fteducation= "Bachelore";
+    //Part time emploeyy
+     String ptemp = "Part time";
+    String ptname = "Abuldrhman";
+    String ptposition = "System Enginner";
+    double ptsalary = 6000;
+    int ptexperience = 4;
+    String pteducation= "Diploma";
+        System.out.println("Name: "+ftname +" Position: "+ ftposition+" Old Salary: "+ftsalary+" Experience: "+ ftexperience+" Educatuin: "+ fteducation+" New Salary: "+CalSalary(ftsalary,fteducation,ftexperience,ftemp));
+         System.out.println("Name: "+ptname +" Position: "+ ptposition+" Old Salary: "+ptsalary+" Experience: "+ ptexperience+" Educatuin: "+ pteducation+" New Salary: "+CalSalary(ptsalary,pteducation,ptexperience,ptemp));
+    
+    }
+    
+}
